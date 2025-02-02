@@ -15,12 +15,13 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
     <div className={`fixed top-0 left-0 z-10 w-64 h-full bg-gray-800 text-white transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:block`}>
-      <div className="flex justify-between p-4 border-b border-gray-700">
+      <div className="flex justify-between p-4 border-b border-gray-700 relative">
         <span className="text-xl font-semibold">مدیریت فروشگاه</span>
-        <button onClick={toggleSidebar} className="md:hidden">
-        <FontAwesomeIcon icon={faBars} className="fa-fw" />
+        <button onClick={toggleSidebar} className="md:hidden text-black absolute top-4 -right-8">
+          <FontAwesomeIcon icon={faBars} className="fa-fw" />
         </button>
       </div>
+
       <ul className="p-4 space-y-4">
         <li>
           <a href="#" className="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
